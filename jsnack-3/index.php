@@ -51,19 +51,27 @@ $posts = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body> <?php
+<body> 
+    
+    
+    <?php
 
-    // var_dump($posts);
 
 
     $postLenght = count($posts);
+    $keys = array_keys($posts);
     for ($i=0; $i < $postLenght; $i++) { 
-        $post = $posts[$i];
-        echo "{$post['10/01/2019'][0]}";
-    }
-
-
+       $post = $posts[$keys[$i]];
+        for ($x = 0; $x < count($post); $x++) { 
+            $social = $post[$x];
+            echo "<div> {$social['title']} </div>";
+            echo "<div> {$social['author']} </div>";
+            echo "<div> {$social['text']} </div>";
+        };
+    };
 
     ?>    
+    
+    
 </body>
 </html>
